@@ -2,52 +2,98 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Suvatec';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<div class="slide-box">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+</div>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<div class="overview" style="display: none;">
+    <div class="overview-left">
+
     </div>
 
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+    <div class="overview-right">
+        <div class="overview-column">
+            <div class="overview-column-1"></div>
+            <div class="overview-column-2"></div>
         </div>
 
+        <div class="overview-column">
+            <div class="overview-column-2"></div>
+            <div class="overview-column-1"></div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        Star Product
+    </div>
+
+    <div class="box-body">
+        <div class="container">
+            <div class="column-list">
+                <div class="column-flex-1">
+                    <a href="javascript:;">
+                        <img src="tmp/p1.jpg" />
+                    </a>
+                    <p>CUCICA AirPurifier</p>
+                </div>
+                <div class="column-flex-1">
+                    <a href="javascript:;">
+                        <img src="tmp/p2.jpg" />
+                    </a>
+                    <p>EB14 Shock-absorbing electric bicycle</p>
+                </div>
+                <div class="column-flex-1">
+                    <a href="javascript:;">
+                        <img src="tmp/p3.jpg" />
+                    </a>
+                    <p>M2261WH Game display</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        New Product
+    </div>
+
+    <div class="box-body">
+        <div class="new-product">
+            <div class="left-item">
+                <div class="intro">
+                    <h3>Electric<br>bicycle series</h3>
+                    <p>Use top-grade manufacturing materials<br>While enjoying comfort</p>
+                    <a href="javascript:;" class="more">LEARN MORE</a>
+                </div>
+            </div>
+
+            <div class="right-item">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        Our Clients
+    </div>
+
+    <div class="box-body">
+        <div class="container">
+            <div class="our-clients">
+                <a href="javascript:;" class="client-item client-item-1"></a>
+                <a href="javascript:;" class="client-item client-item-2"></a>
+                <a href="javascript:;" class="client-item client-item-3"></a>
+                <a href="javascript:;" class="client-item client-item-4"></a>
+                <a href="javascript:;" class="client-item client-item-5"></a>
+            </div>
+        </div>
     </div>
 </div>

@@ -5,7 +5,7 @@ use yii\bootstrap\ActiveForm;
 use ijony\admin\widgets\ActiveField;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Category */
+/* @var $model admin\models\Category */
 /* @var $form yii\bootstrap\ActiveForm  */
 ?>
 
@@ -17,15 +17,10 @@ use ijony\admin\widgets\ActiveField;
             'layout' => 'horizontal',
         ]); ?>
 
-        <?= $form->field($model, 'name')->textInput([
-            'maxlength' => true,
-            'data-ajax' => 'blur',
-            'data-ajax-url' => \yii\helpers\Url::to(['ajax/get-slug']),
-            'data-ajax-target' => Html::getInputId($model, 'slug')
-        ]) ?>
-        <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'parent_id')->select() ?>
         <?= $form->field($model, 'sort')->textInput(['maxlength' => true]) ?>
-        <?= $form->field($model, 'status')->switchery($model::STATUS_ACTIVE) ?>
+        <?= $form->field($model, 'status')->radioList($model->getStatusSelectData()) ?>
 
         <div class="form-group">
             <div class="col-sm-6 col-sm-offset-3">

@@ -5,27 +5,32 @@ namespace admin\controllers;
 use Yii;
 use admin\models\Category;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 
 /**
- * Category controller
+ * 商品分类管理类
+ *
+ * @auth_key    category
+ * @auth_name   商品分类管理
  */
 class CategoryController extends Controller
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
+                'rules' => $this->getRules('category'),
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -34,15 +39,18 @@ class CategoryController extends Controller
     /**
      * 分类列表
      *
+     * @auth_key    *
+     * @auth_parent category
+     *
      * @return string
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Category::find(),
-        ]);
+        $searchModel = new \admin\models\search\Category();
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -50,11 +58,16 @@ class CategoryController extends Controller
     /**
      * 添加分类
      *
+     * @auth_key    category_create
+     * @auth_name   添加分类
+     * @auth_parent category
+     *
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
         $model = new Category();
+        $model->status = Category::STATUS_ACTIVE;
 
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['index']);
@@ -68,9 +81,14 @@ class CategoryController extends Controller
     /**
      * 编辑分类
      *
+     * @auth_key    category_update
+     * @auth_name   编辑分类
+     * @auth_parent category
+     *
      * @param $id
      *
      * @return string|\yii\web\Response
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionUpdate($id)
     {
@@ -88,9 +106,17 @@ class CategoryController extends Controller
     /**
      * 删除分类
      *
+     * @auth_key    category_delete
+     * @auth_name   删除分类
+     * @auth_parent category
+     *
      * @param $id
      *
      * @return \yii\web\Response
+     * @throws \Exception
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionDelete($id)
     {
@@ -104,7 +130,7 @@ class CategoryController extends Controller
      *
      * @param $id
      *
-     * @return static
+     * @return \admin\models\Category
      * @throws \yii\web\NotFoundHttpException
      */
     protected function findModel($id)

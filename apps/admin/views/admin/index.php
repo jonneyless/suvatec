@@ -5,38 +5,30 @@ use ijony\admin\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '分类管理';
+$this->title = '管理员管理';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['buttons'] = [
     ['label' => '新增', 'url' => ['create'], 'options' => ['class' => 'btn btn-success']],
+    ['label' => '回收站', 'url' => ['recycle'], 'options' => ['class' => 'btn btn-default']],
 ];
 ?>
 
 <div class="ibox">
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'layoutFix' => true,
         'columns' => [
             [
-                'attribute' => 'category_id',
+                'attribute' => 'id',
                 'header' => '#',
             ],
             [
-                'attribute' => 'parent_id',
-                'format' => 'raw',
+                'attribute' => 'role_id',
                 'value' => function($data){
-                    return $data->getParentButton();
+                    return $data->getRoleName();
                 },
             ],
-            [
-                'attribute' => 'name',
-                'format' => 'raw',
-                'value' => function($data){
-                    return $data->getChildButton();
-                },
-            ],
+            'username',
             [
                 'attribute' => 'status',
                 'format' => 'raw',
@@ -50,6 +42,7 @@ $this->params['buttons'] = [
                 'headerOptions' => [
                     'class' => 'text-right',
                 ],
+                'template' => '{view} {update} {remove}',
             ],
         ],
     ]); ?>

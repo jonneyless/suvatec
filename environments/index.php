@@ -36,11 +36,10 @@ return [
             'apps/home/runtime',
             'apps/admin/assets',
             'apps/home/assets',
-            'apps/static',
+            'webs/static',
         ],
         'setExecutable' => [
             'yii',
-            'yii_test',
         ],
         'setCookieValidationKey' => [
             'apps/admin/config/main-local.php',
@@ -54,7 +53,7 @@ return [
             'apps/home/runtime',
             'apps/admin/assets',
             'apps/home/assets',
-            'apps/static',
+            'webs/static',
         ],
         'setExecutable' => [
             'yii',
@@ -71,7 +70,7 @@ return [
             'apps/home/runtime',
             'apps/admin/assets',
             'apps/home/assets',
-            'apps/static',
+            'webs/static',
         ],
         'setExecutable' => [
             'yii',
