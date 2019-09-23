@@ -39,7 +39,11 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',
             'rules' => [
+                '/' => 'site/index',
+                '/category/<slug:[^/]+>' => 'category/view',
+                '/product/<slug:[^/]+>' => 'product/view',
             ],
         ],
     ],

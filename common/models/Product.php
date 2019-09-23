@@ -16,7 +16,22 @@ use Yii;
  * @property string $description SEO 描述
  * @property string $specification 规格
  * @property int $status 状态
+ *
+ * @property \common\models\Category $category
  */
 class Product extends namespace\base\Product
 {
+
+    const STATUS_DELETE = 0;    // 删除
+    const STATUS_UNACTIVE = 1;  // 禁用
+    const STATUS_ACTIVE = 9;    // 启用
+
+    /**
+     * 商品分类信息
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
 }

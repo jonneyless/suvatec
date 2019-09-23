@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $starProducts \home\models\Product[] */
 
 $this->title = 'Suvatec';
 ?>
@@ -35,24 +36,14 @@ $this->title = 'Suvatec';
     <div class="box-body">
         <div class="container">
             <div class="column-list">
+                <?php foreach ($starProducts as $product) { ?>
                 <div class="column-flex-1">
-                    <a href="javascript:;">
-                        <img src="tmp/p1.jpg" />
+                    <a href="<?= $product->getViewUrl() ?>">
+                        <img src="<?= $product->getPreview() ?>"/>
                     </a>
-                    <p>CUCICA AirPurifier</p>
+                    <p><?= $product->name ?></p>
                 </div>
-                <div class="column-flex-1">
-                    <a href="javascript:;">
-                        <img src="tmp/p2.jpg" />
-                    </a>
-                    <p>EB14 Shock-absorbing electric bicycle</p>
-                </div>
-                <div class="column-flex-1">
-                    <a href="javascript:;">
-                        <img src="tmp/p3.jpg" />
-                    </a>
-                    <p>M2261WH Game display</p>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>

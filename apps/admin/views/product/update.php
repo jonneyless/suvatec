@@ -1,10 +1,10 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model admin\models\Category */
+/* @var $model admin\models\Product */
 
-$this->title = '编辑分类：' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => '分类管理', 'url' => ['index']];
+$this->title = '编辑产品：' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => '产品管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '编辑';
 $this->params['buttons'] = [

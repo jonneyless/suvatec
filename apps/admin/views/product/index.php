@@ -4,12 +4,14 @@ use ijony\admin\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $searchModel \admin\models\search\Category */
+/* @var $searchModel \admin\models\search\Product */
+/* @var $data \admin\models\Product */
 
-$this->title = '分类管理';
+$this->title = '产品管理';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['buttons'] = [
     ['label' => '新增', 'url' => ['create'], 'options' => ['class' => 'btn btn-success']],
+    ['label' => '回收站', 'url' => ['recycle'], 'options' => ['class' => 'btn btn-default']],
 ];
 ?>
 
@@ -25,23 +27,23 @@ $this->params['buttons'] = [
                 'header' => '#',
             ],
             [
-                'attribute' => 'parent_id',
-                'format' => 'raw',
-                'value' => function($data){
-                    return $data->getParentButton();
+                'attribute' => 'preview',
+                'value' => function ($data) {
+                    return $data->getPreview(200, 200);
                 },
+                'format' => ['image', ['style' => 'max-width: 200px; max-height: 50px;']],
             ],
             [
-                'attribute' => 'name',
-                'format' => 'raw',
-                'value' => function($data){
-                    return $data->getChildButton();
+                'attribute' => 'category_id',
+                'value' => function ($data) {
+                    return $data->category ? $data->category->name : '';
                 },
             ],
+            'name',
             [
                 'attribute' => 'status',
                 'format' => 'raw',
-                'value' => function($data){
+                'value' => function ($data) {
                     return $data->getStatusLabel();
                 },
             ],
@@ -55,3 +57,4 @@ $this->params['buttons'] = [
         ],
     ]); ?>
 </div>
+

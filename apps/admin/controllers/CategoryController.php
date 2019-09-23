@@ -4,7 +4,7 @@ namespace admin\controllers;
 
 use Yii;
 use admin\models\Category;
-use yii\data\ActiveDataProvider;
+use admin\models\search\Category as CateogrySearch;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new \admin\models\search\Category();
+        $searchModel = new CateogrySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [

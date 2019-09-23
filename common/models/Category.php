@@ -16,11 +16,20 @@ use Yii;
  * @property string $child_arr 子级群
  * @property string $sort 排序
  * @property int $status 状态
+ *
+ * @property \common\models\Category $parent
  */
 class Category extends namespace\base\Category
 {
 
-    const STANUS_UNACTIVE = 0;    // 禁用
+    const STATUS_UNACTIVE = 0;    // 禁用
     const STATUS_ACTIVE = 9;      // 启用
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParent()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'parent_id']);
+    }
 }

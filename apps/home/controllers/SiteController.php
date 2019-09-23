@@ -1,17 +1,12 @@
 <?php
 namespace home\controllers;
 
+use home\models\Product;
 use Yii;
-use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
-use home\models\PasswordResetRequestForm;
-use home\models\ResetPasswordForm;
-use home\models\SignupForm;
-use home\models\ContactForm;
 
 /**
  * Site controller
@@ -72,7 +67,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $starProducts = Product::getStarProducts();
+
+        return $this->render('index', [
+            'starProducts' => $starProducts,
+        ]);
     }
 
     /**

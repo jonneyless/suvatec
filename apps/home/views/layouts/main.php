@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use home\models\Category;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -33,17 +34,18 @@ AppAsset::register($this);
         ],
     ]);
 
+    $categories = Category::getCatogriesByParentId();
+    $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+
+    foreach ($categories as $category) {
+        $menuItems[] = ['label' => $category->name, 'url' => ['/category/view', 'slug' => $category->slug], 'active' => isset($this->context->category_id) && $this->context->category_id == $category->id];
+    }
+
+    $menuItems[] = ['label' => 'Support', 'url' => ['/page/support']];
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'AirPurifier', 'url' => ['/category/air-purifier']],
-            ['label' => 'Outdoor', 'url' => ['/category/outdoor']],
-            ['label' => 'Monitors', 'url' => ['/category/monitors']],
-            ['label' => 'Household', 'url' => ['/category/household']],
-            ['label' => 'Other', 'url' => ['/category/other']],
-            ['label' => 'Support', 'url' => ['/page/support']],
-        ],
+        'items' => $menuItems,
     ]);
 
     NavBar::end();
