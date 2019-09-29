@@ -17,6 +17,7 @@ use Yii;
  * @property string $specification 规格
  * @property int $status 状态
  *
+ * @property \common\models\ProductGallery[] $gallery
  * @property \common\models\Category $category
  */
 class Product extends namespace\base\Product
@@ -25,6 +26,16 @@ class Product extends namespace\base\Product
     const STATUS_DELETE = 0;    // 删除
     const STATUS_UNACTIVE = 1;  // 禁用
     const STATUS_ACTIVE = 9;    // 启用
+
+    /**
+     * 商品组图
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGallery()
+    {
+        return $this->hasMany(ProductGallery::className(), ['product_id' => 'id'])->orderBy(['sort' => SORT_ASC]);
+    }
 
     /**
      * 商品分类信息

@@ -193,6 +193,11 @@ a.more:hover {
 
 .column-flex-1 img {
     width: 100%;
+    opacity: 0.8;
+}
+
+.column-flex-1 img:hover {
+    opacity: 1;
 }
 
 .column-flex-1 p {

@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use home\models\Category;
+use home\models\Page;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -41,7 +42,8 @@ AppAsset::register($this);
         $menuItems[] = ['label' => $category->name, 'url' => ['/category/view', 'slug' => $category->slug], 'active' => isset($this->context->category_id) && $this->context->category_id == $category->id];
     }
 
-    $menuItems[] = ['label' => 'Support', 'url' => ['/page/support']];
+    $supportSlug = Page::getSlugById(3);
+    $menuItems[] = ['label' => 'Support', 'url' => ['/page/view', 'slug' => $supportSlug], 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $supportSlug];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -59,20 +61,14 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-lg-6">
                 <h3>ABOUT US</h3>
-                Out of many Huntkey product line, Monitor CN under HongKong Si-press Electronics Co.,LTD is aiming to provide all kinds of monitors to our customer such as home monitors, office monitors, gaming monitors and security monitoring.<br>
-                We are original OEM/ODM factory for monitors, the factory was founded in 1995 with our own design, R&D and manufacturing team.
+                <?= Page::getContentById(1, true) ?>
             </div>
 
             <div class="col-lg-1"></div>
 
             <div class="col-lg-5">
                 <h3>CONTACT</h3>
-                E-mail: info@monitor-cn.com<br />
-                Whatsapp:  + 86 13554941136<br />
-                Wechat:  + 86 13554941136<br />
-                Phone:  + 86 13554941136<br />
-                Address:  A806 Liwan Building Qianhai RD<br />
-                Nanshan District of Shenzhen China.  518054
+                <?= Page::getContentById(2, true) ?>
             </div>
         </div>
     </div>

@@ -2,31 +2,30 @@
 
 namespace home\controllers;
 
-use home\models\Category;
+use home\models\Page;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
- * Category controller
+ * Page controller
  */
-class CategoryController extends Controller
+class PageController extends Controller
 {
 
-    public $category_id;
-
     /**
+     * @param $slug
+     *
      * @return string
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionView($slug)
     {
-        $model = Category::getOneBySlug($slug);
+        $model = Page::getOneBySlug($slug);
 
         if (!$model) {
-            throw new NotFoundHttpException('分类不存在！');
+            throw new NotFoundHttpException('页面不存在！');
         }
-
-        $this->category_id = $model->id;
 
         return $this->render('view', [
             'model' => $model,

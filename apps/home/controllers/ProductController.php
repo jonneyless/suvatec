@@ -23,7 +23,7 @@ class ProductController extends Controller
      */
     public function actionView($slug)
     {
-        $model = Product::getCategoryBySlug($slug);
+        $model = Product::getOneBySlug($slug);
 
         if (!$model) {
             throw new NotFoundHttpException('产品不存在！');

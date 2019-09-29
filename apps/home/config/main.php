@@ -44,6 +44,7 @@ return [
                 '/' => 'site/index',
                 '/category/<slug:[^/]+>' => 'category/view',
                 '/product/<slug:[^/]+>' => 'product/view',
+                '/page/<slug:[^/]+>' => 'page/view',
             ],
         ],
     ],

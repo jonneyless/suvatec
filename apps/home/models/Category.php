@@ -35,7 +35,7 @@ class Category extends \common\models\Category
      *
      * @return \home\models\Category|\yii\db\ActiveRecord|null
      */
-    public static function getCategoryBySlug($slug)
+    public static function getOneBySlug($slug)
     {
         return self::find()->where(['slug' => $slug])->one();
     }

@@ -48,7 +48,7 @@ class Product extends \common\models\Product
      *
      * @return \home\models\Product|\yii\db\ActiveRecord|null
      */
-    public static function getCategoryBySlug($slug)
+    public static function getOneBySlug($slug)
     {
         return self::find()->where(['slug' => $slug])->one();
     }
