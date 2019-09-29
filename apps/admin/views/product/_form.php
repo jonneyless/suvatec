@@ -54,6 +54,7 @@ JuiAsset::register($this);
                 <?= $form->field($model, 'category_id')->select(['class' => 'admin\\models\\Category']) ?>
                 <?= $form->field($model, 'preview')->image() ?>
                 <?= $form->field($model, 'specification')->editor() ?>
+                <?= $form->field($model, 'intro')->editor() ?>
                 <?= $form->field($model, 'keywords')->textarea() ?>
                 <?= $form->field($model, 'description')->textarea() ?>
                 <?= $form->field($model, 'status')->radioList($model->getStatusSelectData()) ?>

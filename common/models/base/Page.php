@@ -12,6 +12,7 @@ use Yii;
  * @property string $slug 识别字串
  * @property string $keywords SEO 关键字
  * @property string $description SEO 描述
+ * @property string $summary 简介
  * @property string $content 内容
  * @property int $status 状态
  */
@@ -32,7 +33,7 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['content'], 'string'],
+            [['summary', 'content'], 'string'],
             [['status'], 'integer'],
             [['name'], 'string', 'max' => 60],
             [['slug', 'keywords', 'description'], 'string', 'max' => 255],
@@ -51,6 +52,7 @@ class Page extends \yii\db\ActiveRecord
             'slug' => '识别字串',
             'keywords' => 'SEO 关键字',
             'description' => 'SEO 描述',
+            'summary' => '简介',
             'content' => '内容',
             'status' => '状态',
         ];

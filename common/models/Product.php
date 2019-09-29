@@ -15,6 +15,7 @@ use Yii;
  * @property string $keywords SEO 关键字
  * @property string $description SEO 描述
  * @property string $specification 规格
+ * @property string $intro 介绍
  * @property int $status 状态
  *
  * @property \common\models\ProductGallery[] $gallery

@@ -42,8 +42,11 @@ AppAsset::register($this);
         $menuItems[] = ['label' => $category->name, 'url' => ['/category/view', 'slug' => $category->slug], 'active' => isset($this->context->category_id) && $this->context->category_id == $category->id];
     }
 
-    $supportSlug = Page::getSlugById(3);
-    $menuItems[] = ['label' => 'Support', 'url' => ['/page/view', 'slug' => $supportSlug], 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $supportSlug];
+    $aboutUs = Page::findOne(1);
+    $menuItems[] = ['label' => $aboutUs->name, 'url' => $aboutUs->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $aboutUs->slug];
+
+    $contact = Page::findOne(2);
+    $menuItems[] = ['label' => $contact->name, 'url' => $contact->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $contact->slug];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -61,14 +64,14 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-lg-6">
                 <h3>ABOUT US</h3>
-                <?= Page::getContentById(1, true) ?>
+                <?= $aboutUs->showSummery() ?>
             </div>
 
             <div class="col-lg-1"></div>
 
             <div class="col-lg-5">
                 <h3>CONTACT</h3>
-                <?= Page::getContentById(2, true) ?>
+                <?= $contact->showSummery() ?>
             </div>
         </div>
     </div>

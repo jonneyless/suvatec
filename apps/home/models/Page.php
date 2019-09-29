@@ -3,6 +3,7 @@
 namespace home\models;
 
 use Yii;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "{{%page}}".
@@ -17,6 +18,34 @@ use Yii;
  */
 class Page extends \common\models\Page
 {
+
+    /**
+     * @param bool $onlyParams
+     *
+     * @return bool|string
+     */
+    public function getViewUrl($onlyParams = false)
+    {
+        $params = ['page/view', 'id' => $this->id];
+
+        if ($this->slug) {
+            $params = ['page/view', 'slug' => $this->slug];
+        }
+
+        if ($onlyParams) {
+            return $params;
+        }
+
+        return Url::to($params);
+    }
+
+    /**
+     * @return string
+     */
+    public function showSummery()
+    {
+        return nl2br($this->summary);
+    }
 
     /**
      * @param $slug

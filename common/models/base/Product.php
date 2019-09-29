@@ -15,6 +15,7 @@ use Yii;
  * @property string $keywords SEO 关键字
  * @property string $description SEO 描述
  * @property string $specification 规格
+ * @property string $intro 介绍
  * @property int $status 状态
  */
 class Product extends \yii\db\ActiveRecord
@@ -35,7 +36,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             [['category_id', 'name'], 'required'],
             [['category_id', 'status'], 'integer'],
-            [['specification'], 'string'],
+            [['specification', 'intro'], 'string'],
             [['name'], 'string', 'max' => 60],
             [['slug', 'preview', 'keywords', 'description'], 'string', 'max' => 255],
             [['slug'], 'unique'],
@@ -56,6 +57,7 @@ class Product extends \yii\db\ActiveRecord
             'keywords' => 'SEO 关键字',
             'description' => 'SEO 描述',
             'specification' => '规格',
+            'intro' => '介绍',
             'status' => '状态',
         ];
     }

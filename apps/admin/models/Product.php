@@ -19,6 +19,7 @@ use yii\helpers\ArrayHelper;
  * @property string $keywords SEO 关键字
  * @property string $description SEO 描述
  * @property string $specification 规格
+ * @property string $intro 介绍
  * @property int $status 状态
  *
  * @property array $galleries 组图数据
@@ -51,8 +52,10 @@ class Product extends \common\models\Product
         }
 
         $datas = Image::recoverImg($this->specification);
-
         $this->specification = $datas['content'];
+
+        $datas = Image::recoverImg($this->intro);
+        $this->intro = $datas['content'];
 
         if ($this->preview && substr($this->preview, 0, 6) == BUFFER_FOLDER) {
             $oldImg = $this->preview;
@@ -103,21 +106,6 @@ class Product extends \common\models\Product
     /**
      * {@inheritdoc}
      */
-    public function afterFind()
-    {
-        parent::afterFind();
-
-        if ($this->gallery) {
-            foreach ($this->gallery as $gallery) {
-                $this->galleries['image'][] = $gallery->image;
-                $this->galleries['thumb'][] = Image::getImg($gallery->image, 170, 170);
-            }
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function afterDelete()
     {
         parent::afterDelete();
@@ -128,6 +116,16 @@ class Product extends \common\models\Product
         }
 
         File::delFile($this->preview, true);
+    }
+
+    public function fillRelations()
+    {
+        if ($this->gallery) {
+            foreach ($this->gallery as $gallery) {
+                $this->galleries['image'][] = $gallery->image;
+                $this->galleries['thumb'][] = Image::getImg($gallery->image, 170, 170);
+            }
+        }
     }
 
     /**

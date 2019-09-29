@@ -27,7 +27,7 @@ class Category extends \common\models\Category
      */
     public static function getCatogriesByParentId($parent_id = 0)
     {
-        return self::find()->where(['parent_id' => $parent_id])->all();
+        return self::find()->where(['parent_id' => $parent_id])->where(['status' => self::STATUS_ACTIVE])->all();
     }
 
     /**

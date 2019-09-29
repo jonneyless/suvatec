@@ -149,6 +149,8 @@ class ProductController extends Controller
             }
         }
 
+        $model->fillRelations();
+
         return $this->render('update', [
             'model' => $model,
         ]);

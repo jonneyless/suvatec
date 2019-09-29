@@ -12,6 +12,7 @@ use Yii;
  * @property string $slug 识别字串
  * @property string $keywords SEO 关键字
  * @property string $description SEO 描述
+ * @property string $summary 简介
  * @property string $content 内容
  * @property int $status 状态
  */
