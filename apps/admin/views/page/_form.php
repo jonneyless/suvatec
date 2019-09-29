@@ -19,7 +19,7 @@ use ijony\admin\widgets\ActiveField;
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
-        <?= $form->field($model, 'summary')->textarea() ?>
+        <?= $form->field($model, 'summary')->textarea(['rows' => 6]) ?>
         <?= $form->field($model, 'content')->editor() ?>
         <?= $form->field($model, 'keywords')->textarea() ?>
         <?= $form->field($model, 'description')->textarea() ?>
