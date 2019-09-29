@@ -44,5 +44,15 @@
     },
     "scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
-    }
+    },
+    "repositories": [
+        {
+            "url": "http://github.com/jonneyless/yii2-admin-asset.git",
+            "type": "vcs"
+        },
+        {
+            "url": "http:///github.com/jonneyless/yii2-helper-extend.git",
+            "type": "vcs"
+        }
+    ]
 }
