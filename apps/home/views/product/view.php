@@ -24,14 +24,16 @@ $this->title = $model->name;
         </div>
 
         <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#tab-intro">Description</a></li>
-            </ul>
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-intro">Description</a></li>
+                </ul>
 
-            <div class="tab-content">
-                <div id="tab-intro" class="tab-intro active">
-                    <div class="panel-body">
-                        <?= $model->intro ?>
+                <div class="tab-content">
+                    <div id="tab-intro" class="tab-intro active">
+                        <div class="panel-body">
+                            <?= $model->intro ?>
+                        </div>
                     </div>
                 </div>
             </div>

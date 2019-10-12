@@ -290,3 +290,11 @@ a.more:hover {
 .our-clients .client-item-5 {
     background-image: url("../tmp/client5.jpg");
 }
+
+.product-detail .row {
+    margin-bottom: 60px;
+}
+
+.product-detail .preview img {
+    width: 100%;
+}
