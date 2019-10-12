@@ -9,7 +9,7 @@ $this->title = $model->name;
 <div class="container">
     <div class="product-detail">
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-6">
                 <div class="preview">
                     <a href="<?= $model->getViewUrl() ?>">
                         <img src="<?= $model->getPreview() ?>"/>
@@ -17,7 +17,7 @@ $this->title = $model->name;
                 </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-lg-offset-1">
                 <h3><?= $model->name ?></h3>
                 <div class="specification"><?= $model->specification ?></div>
             </div>
