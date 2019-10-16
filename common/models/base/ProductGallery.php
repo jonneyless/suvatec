@@ -16,12 +16,21 @@ class ProductGallery extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public static function tableName()
+    {
+        return '{{%product_gallery}}';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function rules()
     {
         return [
-            [['product_id'], 'required'],
+            [['product_id', 'image'], 'required'],
             [['product_id', 'sort'], 'integer'],
             [['image'], 'string', 'max' => 255],
+            [['product_id', 'image'], 'unique', 'targetAttribute' => ['product_id', 'image']],
         ];
     }
 
@@ -35,13 +44,5 @@ class ProductGallery extends \yii\db\ActiveRecord
             'image' => '图片',
             'sort' => '排序',
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return '{{%product_gallery}}';
     }
 }
