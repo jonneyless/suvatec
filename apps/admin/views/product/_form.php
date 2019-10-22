@@ -57,6 +57,7 @@ JuiAsset::register($this);
                 <?= $form->field($model, 'intro')->editor() ?>
                 <?= $form->field($model, 'keywords')->textarea() ?>
                 <?= $form->field($model, 'description')->textarea() ?>
+                <?= $form->field($model, 'is_star')->radioList($model->getIsStarSelectData()) ?>
                 <?= $form->field($model, 'status')->radioList($model->getStatusSelectData()) ?>
 
                 <div class="form-group">

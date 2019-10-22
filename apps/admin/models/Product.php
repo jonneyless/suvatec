@@ -20,6 +20,7 @@ use yii\helpers\ArrayHelper;
  * @property string $description SEO 描述
  * @property string $specification 规格
  * @property string $intro 介绍
+ * @property int $is_star 推荐
  * @property int $status 状态
  *
  * @property array $galleries 组图数据
@@ -198,6 +199,47 @@ class Product extends \common\models\Product
         return [
             self::STATUS_UNACTIVE => '禁用',
             self::STATUS_ACTIVE => '启用',
+        ];
+    }
+
+    /**
+     * 获取状态表述
+     *
+     * @return mixed|string
+     */
+    public function getIsStar()
+    {
+        $datas = $this->getIsStarSelectData();
+
+        return isset($datas[$this->is_star]) ? $datas[$this->is_star] : '';
+    }
+
+    /**
+     * 获取状态标签
+     *
+     * @return mixed|string
+     */
+    public function getIsStarLabel()
+    {
+        if ($this->is_star == self::IS_STAR_YES) {
+            $class = 'label-primary';
+        } else {
+            $class = 'label-default';
+        }
+
+        return Utils::label($this->getIsStar(), $class);
+    }
+
+    /**
+     * 获取完整状态数据
+     *
+     * @return array
+     */
+    public function getIsStarSelectData()
+    {
+        return [
+            self::IS_STAR_NO => '普通',
+            self::IS_STAR_YES => '推荐',
         ];
     }
 }

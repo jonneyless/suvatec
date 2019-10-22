@@ -16,6 +16,7 @@ use Yii;
  * @property string $description SEO 描述
  * @property string $specification 规格
  * @property string $intro 介绍
+ * @property int $is_star 推荐
  * @property int $status 状态
  *
  * @property \common\models\ProductGallery[] $gallery
@@ -27,6 +28,9 @@ class Product extends namespace\base\Product
     const STATUS_DELETE = 0;    // 删除
     const STATUS_UNACTIVE = 1;  // 禁用
     const STATUS_ACTIVE = 9;    // 启用
+
+    const IS_STAR_NO = 0;
+    const IS_STAR_YES = 9;
 
     /**
      * 商品组图

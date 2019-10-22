@@ -39,7 +39,7 @@ $this->title = 'Suvatec';
                 <?php foreach ($starProducts as $product) { ?>
                 <div class="column-flex-1">
                     <a href="<?= $product->getViewUrl() ?>">
-                        <img src="<?= $product->getPreview() ?>"/>
+                        <img src="<?= $product->getPreview(368, 368, false) ?>"/>
                     </a>
                     <p><?= $product->name ?></p>
                 </div>

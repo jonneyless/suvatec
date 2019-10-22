@@ -16,6 +16,7 @@ use Yii;
  * @property string $description SEO 描述
  * @property string $specification 规格
  * @property string $intro 介绍
+ * @property int $is_star 推荐
  * @property int $status 状态
  */
 class Product extends \yii\db\ActiveRecord
@@ -34,8 +35,8 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'name'], 'required'],
-            [['category_id', 'status'], 'integer'],
+            [['category_id', 'name', 'is_star'], 'required'],
+            [['category_id', 'is_star', 'status'], 'integer'],
             [['specification', 'intro'], 'string'],
             [['name'], 'string', 'max' => 60],
             [['slug', 'preview', 'keywords', 'description'], 'string', 'max' => 255],
@@ -58,6 +59,7 @@ class Product extends \yii\db\ActiveRecord
             'description' => 'SEO 描述',
             'specification' => '规格',
             'intro' => '介绍',
+            'is_star' => '推荐',
             'status' => '状态',
         ];
     }

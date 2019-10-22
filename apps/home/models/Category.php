@@ -21,6 +21,14 @@ class Category extends \common\models\Category
 {
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasMany(Product::className(), ['category_id' => 'id']);
+    }
+
+    /**
      * @param int $parent_id
      *
      * @return \home\models\Category[]|\yii\db\ActiveRecord[]

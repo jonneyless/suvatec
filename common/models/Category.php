@@ -18,6 +18,7 @@ use Yii;
  * @property int $status 状态
  *
  * @property \common\models\Category $parent
+ * @property \common\models\Product[] $product
  */
 class Category extends namespace\base\Category
 {
@@ -31,5 +32,13 @@ class Category extends namespace\base\Category
     public function getParent()
     {
         return $this->hasOne(Category::className(), ['id' => 'parent_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasMany(Product::className(), ['category_id' => 'id']);
     }
 }
