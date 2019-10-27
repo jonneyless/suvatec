@@ -60,6 +60,6 @@ class Product extends \common\models\Product
      */
     public static function getStarProducts()
     {
-        return self::find()->limit(3)->all();
+        return self::find()->where(['is_star' => self::IS_STAR_YES])->limit(3)->all();
     }
 }
