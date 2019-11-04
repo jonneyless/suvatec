@@ -305,20 +305,20 @@ a.more:hover {
 }
 
 .preview-list {
-    height: 52px;
+    height: 80px;
 }
 
 .preview-list a {
     float: left;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #d3d3d3;
     margin-right: 10px;
 }
 
 .preview-list a img {
-    width: 48px;
-    height: 48px;
+    width: 78px;
+    height: 78px;
 }
 
 .product-list {
