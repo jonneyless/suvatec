@@ -58,7 +58,12 @@ body {
 }
 
 .footer .sns i.fa {
-    font-size: 18px;
+    font-size: 32px;
+    color: #c4c4c4;
+}
+
+.footer .sns a:hover i.fa {
+    color: #ffffff;
 }
 
 a,
