@@ -17,9 +17,9 @@ $this->title = $model->name;
                 </div>
 
                 <div class="preview-list">
-                    <a href="javascript:;" data-preview="<?= $model->getPreview() ?>"><?= $model->getPreview(100, 100) ?></a>
+                    <a href="javascript:;" data-preview="<?= $model->getPreview() ?>"><img src="<?= $model->getPreview(100, 100) ?>"/></a>
                     <?php foreach ($model->gallery as $gallery) { ?>
-                        <a href="javascript:;" data-preview="<?= $gallery->getPreview() ?>"><?= $gallery->getPreview(100, 100) ?></a>
+                        <a href="javascript:;" data-preview="<?= $gallery->getPreview() ?>"><img src="<?= $gallery->getPreview(100, 100) ?>"/></a>
                     <?php } ?>
                 </div>
             </div>
