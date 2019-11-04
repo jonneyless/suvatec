@@ -15,6 +15,13 @@ $this->title = $model->name;
                         <img src="<?= $model->getPreview() ?>"/>
                     </a>
                 </div>
+
+                <div class="preview-list">
+                    <a href="javascript:;" data-preview="<?= $model->getPreview() ?>"><?= $model->getPreview(100, 100) ?></a>
+                    <?php foreach ($model->gallery as $gallery) { ?>
+                        <a href="javascript:;" data-preview="<?= $gallery->getPreview() ?>"><?= $gallery->getPreview(100, 100) ?></a>
+                    <?php } ?>
+                </div>
             </div>
 
             <div class="col-lg-5 col-lg-offset-1">

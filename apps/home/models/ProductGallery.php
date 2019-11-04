@@ -2,6 +2,7 @@
 
 namespace home\models;
 
+use ijony\helpers\Image;
 use Yii;
 
 /**
@@ -13,4 +14,17 @@ use Yii;
  */
 class ProductGallery extends \common\models\ProductGallery
 {
+
+    /**
+     * 获取主图
+     *
+     * @param int $width
+     * @param int $height
+     *
+     * @return mixed
+     */
+    public function getPreview($width = 0, $height = 0)
+    {
+        return Image::getImg($this->image, $width, $height);
+    }
 }

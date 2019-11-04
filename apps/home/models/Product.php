@@ -20,9 +20,21 @@ use Yii;
  * @property string $intro 介绍
  * @property int $is_star 推荐
  * @property int $status 状态
+ *
+ * @property \common\models\ProductGallery[] $gallery
  */
 class Product extends \common\models\Product
 {
+
+    /**
+     * 商品组图
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGallery()
+    {
+        return $this->hasMany(ProductGallery::className(), ['product_id' => 'id'])->orderBy(['sort' => SORT_ASC]);
+    }
 
     /**
      * 获取主图
