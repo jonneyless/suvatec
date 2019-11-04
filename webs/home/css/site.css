@@ -57,6 +57,10 @@ body {
     margin-top: 50px;
 }
 
+.footer .sns i.fa {
+    font-size: 18px;
+}
+
 a,
 a:hover {
     text-decoration: none;

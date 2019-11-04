@@ -79,6 +79,10 @@ AppAsset::register($this);
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left">All Rights Reserved. Copyright &copy; <?= date('Y') ?> suvatec.com</p>
+            <p class="pull-right sns">
+                <a href="javascript:;"><i class="fa fa-facebook-square"></i></a>
+                <a href="javascript:;"><i class="fa fa-twitter-square"></i></a>
+            </p>
         </div>
     </div>
 </footer>
