@@ -12,7 +12,7 @@ $this->title = $model->name;
             <div class="col-lg-6">
                 <div class="preview">
                     <a href="<?= $model->getViewUrl() ?>">
-                        <img src="<?= $model->getPreview() ?>"/>
+                        <img id="preview" src="<?= $model->getPreview() ?>"/>
                     </a>
                 </div>
 
@@ -47,3 +47,13 @@ $this->title = $model->name;
         </div>
     </div>
 </div>
+
+<?php
+
+$js = <<<JS
+$('.preview-list > a').hover(function() {
+  $('#preview').attr('src', $(this).data('preview'));
+});
+JS;
+
+$this->registerJs($js);
