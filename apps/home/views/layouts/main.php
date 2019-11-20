@@ -63,14 +63,12 @@ AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3>ABOUT US</h3>
-                <?= $aboutUs->showSummery() ?>
+                <h3>CONTACT</h3>
             </div>
 
             <div class="col-lg-1"></div>
 
             <div class="col-lg-5">
-                <h3>CONTACT</h3>
                 <?= $contact->showSummery() ?>
             </div>
         </div>

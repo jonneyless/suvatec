@@ -138,7 +138,6 @@ a.more:hover {
     width: 100%;
     height: 680px;
     background: #dedede url("../tmp/focus.jpg") no-repeat center;
-    margin-bottom: 70px;
 }
 
 .overview {
@@ -220,48 +219,54 @@ a.more:hover {
     margin-right: 0px;
 }
 
-.new-product {
-    display: flex;
+.about-us {
+    background-color: #ffffff;
+    padding: 55px 0px 75px;
 }
 
-.new-product > div {
-    flex: 1;
-    background-size: cover;
-    height: 690px;
+.about-us .left-item {
+    float: left;
+    width: 676px;
+    height: 488px;
+    background: url("../img/about-us.jpg") no-repeat right;
 }
 
-.new-product .left-item {
-    background: #606060 url("../tmp/new-left.jpg") no-repeat right;
-}
-
-.new-product .right-item {
-    background: #dedede url("../tmp/new-right.jpg") no-repeat left;
-}
-
-.new-product .left-item .intro {
+.about-us .right-item {
     float: right;
-    width: 570px;
-    padding-top: 210px;
-    color: #fff;
-    text-align: left;
+    width: 430px;
+    height: 488px;
+    position: relative;
 }
 
-.new-product .left-item .intro h3 {
+.about-us .right-item h3 {
+    font-family: "AvenirNextLTPro Bold", Arial, Helvetica, sans-serif;
     font-weight: bolder;
-    font-size: 36px;
-    font-family: "AvenirNextLTPro Bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    text-transform: uppercase;
-    line-height: 48px;
-    text-align: left;
-    background: url("../img/bluebar.png") no-repeat left bottom;
-    padding-bottom: 24px;
+    margin: 0px 0px 45px;
 }
 
-.new-product .left-item .intro p {
-    font-weight: lighter;
-    font-family: "AvenirLTStd Roman", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 20px;
-    color: #bcbcbc;
+.about-us .right-item p {
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "AvenirLTStd Roman", Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+.about-us .right-item .more {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.service {
+    background-color: #f5f5f5;
+}
+
+.oem {
+    background: #030201 url("../img/oem.jpg") no-repeat center;
+}
+
+.oem .box-body {
+    height: 321px;
 }
 
 .our-clients {
