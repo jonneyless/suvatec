@@ -259,14 +259,67 @@ a.more:hover {
 
 .service {
     background-color: #f5f5f5;
+    font-size: 16px;
+    font-family: "AvenirLTStd Roman", Arial, Helvetica, sans-serif;
+    line-height: 24px;
+}
+
+.service .icons {
+    height: 224px;
+    background: url("../img/service-line.gif") repeat-x center;
+    display: flex;
+}
+
+.service .icons > div {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0px 50px;
+}
+
+.service .icons .icon1 {
+    background-image: url("../img/service-1.gif");
+}
+
+.service .icons .icon2 {
+    background-image: url("../img/service-2.gif");
+}
+
+.service .icons .icon3 {
+    background-image: url("../img/service-3.gif");
+}
+
+.service .icons .icon4 {
+    background-image: url("../img/service-4.gif");
+}
+
+.service .icons .icon5 {
+    background-image: url("../img/service-5.gif");
+}
+
+.service .icons .icon6 {
+    background-image: url("../img/service-6.gif");
 }
 
 .oem {
+    height: 321px;
     background: #030201 url("../img/oem.jpg") no-repeat center;
 }
 
+.oem .box-header {
+    padding-top: 50px;
+    text-align: left;
+    background-position: left bottom;
+    color: #ffffff;
+    margin-bottom: 30px;
+    line-height: 96px;
+}
+
 .oem .box-body {
-    height: 321px;
+    font-size: 16px;
+    font-family: "AvenirLTStd Roman", Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    color: #ffffff;
 }
 
 .our-clients {

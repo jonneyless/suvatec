@@ -43,6 +43,14 @@ use home\models\Page; ?>
 
     <div class="box-body">
         <div class="container">
+            <div class="icons">
+                <div class="icon1"></div>
+                <div class="icon2"></div>
+                <div class="icon3"></div>
+                <div class="icon4"></div>
+                <div class="icon5"></div>
+                <div class="icon6"></div>
+            </div>
             Suvatec team has been in electronic industry since 2008, beginning with PCB manufacturing, assembling, then following the market needs and make the best out of our capability, to electronic turn key projects management.
             With the great advantage of Supply China in China Pearl River Delta(China electronic manufacturing base), we provide professional Sourcing and Supply Chain Management Service. Our experience in the industry, professional skills and great resouces here could be your shortcut to mature technology and product.In the mean time, save your investment and hassle of coordinating among different suppliers.
         </div>
@@ -50,8 +58,14 @@ use home\models\Page; ?>
 </div>
 
 <div class="oem box">
-    <div class="box-body">
-        <div class="container"></div>
+    <div class="container">
+        <div class="box-header">
+            OEM / Sourcing Service
+        </div>
+
+        <div class="box-body">
+            Build a product from scratch takes time and funds, thus we provide certain model ready products available with customized logo and color,more than that, we provide sourcing service according to your special needs in electronics.
+        </div>
     </div>
 </div>
 
