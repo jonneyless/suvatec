@@ -48,9 +48,6 @@ AppAsset::register($this);
     $page = Page::findOne(5);
     $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
 
-    $page = Page::findOne(1);
-    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
-
     $page = Page::findOne(2);
     $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
 
