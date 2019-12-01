@@ -334,6 +334,7 @@ a.more:hover {
     background-repeat: no-repeat;
     background-position: center;
     margin: 20px 0px 50px;
+    text-align: center;
 }
 
 .service .icons > div > a {
