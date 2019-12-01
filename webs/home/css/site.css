@@ -483,12 +483,12 @@ a.more:hover {
     overflow: hidden;
 }
 
-.siderbar-nav ul > li > a > span {
-    float: right;
+.siderbar-nav a, .siderbar-nav a:hover {
+    color: #333333;
 }
 
-.siderbar-nav ul > li > ul {
-    display: none;
+.siderbar-nav ul > li > a > span {
+    float: right;
 }
 
 .siderbar-nav ul > li > ul > li {
