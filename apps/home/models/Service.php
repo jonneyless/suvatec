@@ -6,9 +6,9 @@ use Yii;
 use yii\helpers\Url;
 
 /**
- * This is the model class for table "{{%page}}".
+ * This is the model class for table "{{%service}}".
  *
- * @property string $id 页面 ID
+ * @property string $id 服务 ID
  * @property string $name 名称
  * @property string $slug 识别字串
  * @property string $keywords SEO 关键字
@@ -16,7 +16,7 @@ use yii\helpers\Url;
  * @property string $content 内容
  * @property int $status 状态
  */
-class Page extends \common\models\Page
+class Service extends \common\models\Service
 {
 
     /**
@@ -26,10 +26,10 @@ class Page extends \common\models\Page
      */
     public function getViewUrl($onlyParams = false)
     {
-        $params = ['page/view', 'id' => $this->id];
+        $params = ['service/view', 'id' => $this->id];
 
         if ($this->slug) {
-            $params = ['page/view', 'slug' => $this->slug];
+            $params = ['service/view', 'slug' => $this->slug];
         }
 
         if ($onlyParams) {
@@ -50,7 +50,7 @@ class Page extends \common\models\Page
     /**
      * @param $slug
      *
-     * @return \home\models\Page|\yii\db\ActiveRecord|null
+     * @return \home\models\Service|\yii\db\ActiveRecord|null
      */
     public static function getOneBySlug($slug)
     {

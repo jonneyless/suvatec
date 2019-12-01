@@ -49,6 +49,8 @@ return [
                 '/product/<id:\d+>' => 'product/view',
                 '/page/<slug:[\w-]+>' => 'page/view',
                 '/page/<id:\d+>' => 'page/view',
+                '/service/<slug:[\w-]+>' => 'service/view',
+                '/service/<id:\d+>' => 'service/view',
             ],
         ],
     ],
