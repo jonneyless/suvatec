@@ -5,7 +5,8 @@
 
 $this->title = $model ? $model->name : 'Product';
 
-use home\models\Category; ?>
+use home\models\Category;
+use yii\widgets\LinkPager; ?>
 
 <div class="container clearfix">
     <div class="sidebar">
