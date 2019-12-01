@@ -49,7 +49,7 @@ class Category extends \common\models\Category
         return self::find()->where(['slug' => $slug])->one();
     }
 
-    public static function getNavs()
+    public static function getNavs($model)
     {
         $items = self::find()->where(['status' => self::STATUS_ACTIVE])->all();
 
@@ -58,7 +58,7 @@ class Category extends \common\models\Category
             $return[] = [
                 'url' => Url::to(['product/index', 'slug' => $item->slug]),
                 'name' => $item->name,
-                'active' => $item->slug == Yii::$app->request->getQueryParam('slug'),
+                'active' => $model && $item->slug == $model->slug,
             ];
         }
 

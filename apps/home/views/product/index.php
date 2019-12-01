@@ -15,7 +15,7 @@ use yii\widgets\LinkPager; ?>
         <div class="siderbar-nav">
             <ul class="list-unstyled">
                 <li>&nbsp;</li>
-                <?php $navs = Category::getNavs() ?>
+                <?php $navs = Category::getNavs($model) ?>
                 <li>
                     <a class="nav-item" href="<?= \yii\helpers\Url::to(['product/index']) ?>">全部<span class="iconfont icon-minus"></span></a>
                     <ul class="list-unstyled">
