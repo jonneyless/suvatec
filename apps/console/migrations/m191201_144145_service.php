@@ -26,7 +26,7 @@ class m191201_144145_service extends Migration
             'slug' => $this->string()->unique()->comment('识别字串'),
             'keywords' => $this->string()->notNull()->defaultValue('')->comment('SEO 关键字'),
             'description' => $this->string()->notNull()->defaultValue('')->comment('SEO 描述'),
-            'summary', $this->text()->comment('简介'),
+            'summary' => $this->text()->comment('简介'),
             'content' => $this->text()->comment('内容'),
             'status' => $this->smallInteger(1)->unsigned()->notNull()->defaultValue(0)->comment('状态'),
         ], $tableOptions . ' COMMENT="服务"');
