@@ -42,8 +42,9 @@ return [
             'suffix' => '.html',
             'rules' => [
                 '/' => 'site/index',
-                '/category/<slug:[\w-]+>' => 'product/index',
-                '/category/<id:\d+>' => 'product/view',
+                '/product/category/<slug:[\w-]+>' => 'product/index',
+                '/product/category/<id:\d+>' => 'product/view',
+                '/product' => 'product/index',
                 '/product/<slug:[\w-]+>' => 'product/view',
                 '/product/<id:\d+>' => 'product/view',
                 '/page/<slug:[\w-]+>' => 'page/view',
