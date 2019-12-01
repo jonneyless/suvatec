@@ -331,8 +331,6 @@ a.more:hover {
 
 .service .icons > div {
     flex: 1;
-    background-repeat: no-repeat;
-    background-position: center;
     margin: 20px 0px 50px;
     text-align: center;
 }
@@ -342,30 +340,37 @@ a.more:hover {
     width: 119px;
     height: 154px;
     margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
 }
 
-.service .icons .icon1 {
+.service .icons .icon1 > a {
     background-image: url("../img/service-1.gif");
 }
 
-.service .icons .icon2 {
+.service .icons .icon2 > a {
     background-image: url("../img/service-2.gif");
 }
 
-.service .icons .icon3 {
+.service .icons .icon3 > a {
     background-image: url("../img/service-3.gif");
 }
 
-.service .icons .icon4 {
+.service .icons .icon4 > a {
     background-image: url("../img/service-4.gif");
 }
 
-.service .icons .icon5 {
+.service .icons .icon5 > a {
     background-image: url("../img/service-5.gif");
 }
 
-.service .icons .icon6 {
+.service .icons .icon6 > a {
     background-image: url("../img/service-6.gif");
+}
+
+.service .icons > div > a:hover {
+    opacity: 1;
 }
 
 .oem {
