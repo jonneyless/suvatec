@@ -336,6 +336,13 @@ a.more:hover {
     margin: 20px 0px 50px;
 }
 
+.service .icons > div > a {
+    display: inline-block;
+    width: 119px;
+    height: 154px;
+    margin: 0 auto;
+}
+
 .service .icons .icon1 {
     background-image: url("../img/service-1.gif");
 }

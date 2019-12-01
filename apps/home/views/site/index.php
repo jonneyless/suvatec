@@ -5,7 +5,8 @@
 
 $this->title = 'Suvatec';
 
-use home\models\Page; ?>
+use home\models\Page;
+use home\models\Service; ?>
 
 <div class="slide-box">
 
@@ -44,12 +45,11 @@ use home\models\Page; ?>
     <div class="box-body">
         <div class="container">
             <div class="icons">
-                <div class="icon1"></div>
-                <div class="icon2"></div>
-                <div class="icon3"></div>
-                <div class="icon4"></div>
-                <div class="icon5"></div>
-                <div class="icon6"></div>
+                <?php for ($i = 1; $i <= 6; $i++) { ?>
+                    <div class="icon<?= $i ?>">
+                        <a href="<?= Service::findOne($i)->getViewUrl() ?>"></a>
+                    </div>
+                <?php } ?>
             </div>
             Suvatec team has been in electronic industry since 2008, beginning with PCB manufacturing, assembling, then following the market needs and make the best out of our capability, to electronic turn key projects management.
             With the great advantage of Supply China in China Pearl River Delta(China electronic manufacturing base), we provide professional Sourcing and Supply Chain Management Service. Our experience in the industry, professional skills and great resouces here could be your shortcut to mature technology and product.In the mean time, save your investment and hassle of coordinating among different suppliers.
