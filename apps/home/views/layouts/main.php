@@ -37,16 +37,22 @@ AppAsset::register($this);
 
     $categories = Category::getCatogriesByParentId();
     $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+    $menuItems[] = ['label' => 'Product', 'url' => ['/product/index']];
 
-    foreach ($categories as $category) {
-        $menuItems[] = ['label' => $category->name, 'url' => ['/category/view', 'slug' => $category->slug], 'active' => isset($this->context->category_id) && $this->context->category_id == $category->id];
-    }
+    $page = Page::findOne(3);
+    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
 
-    $aboutUs = Page::findOne(1);
-    $menuItems[] = ['label' => $aboutUs->name, 'url' => $aboutUs->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $aboutUs->slug];
+    $page = Page::findOne(4);
+    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
 
-    $contact = Page::findOne(2);
-    $menuItems[] = ['label' => $contact->name, 'url' => $contact->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $contact->slug];
+    $page = Page::findOne(5);
+    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
+
+    $page = Page::findOne(1);
+    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
+
+    $page = Page::findOne(2);
+    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -69,7 +75,7 @@ AppAsset::register($this);
             <div class="col-lg-1"></div>
 
             <div class="col-lg-5">
-                <?= $contact->showSummery() ?>
+                <?= $page->showSummery() ?>
             </div>
         </div>
     </div>
