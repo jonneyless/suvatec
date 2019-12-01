@@ -14,9 +14,10 @@ use yii\widgets\LinkPager; ?>
 
         <div class="siderbar-nav">
             <ul class="list-unstyled">
-                <li><a href="<?= \yii\helpers\Url::to(['product/index']) ?>">全部</a></li>
+                <li>&nbsp;</li>
                 <?php $navs = Category::getNavs() ?>
                 <li>
+                    <a class="nav-item" href="<?= \yii\helpers\Url::to(['product/index']) ?>">全部<span class="iconfont icon-minus"></span></a>
                     <ul class="list-unstyled">
                         <?php foreach ($navs as $nav) { ?>
                             <li class="<?= $nav['active'] ?>"><a href="<?= $nav['url'] ?>"><?= $nav['name'] ?></a></li>
