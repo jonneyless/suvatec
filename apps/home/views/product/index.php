@@ -30,7 +30,7 @@ use home\models\Category; ?>
         <ul>
             <?php foreach ($data as $datum) { ?>
                 <li>
-                    <a href="<?= $datum->getViewUrl() ?>" class="preview"><img src="<?= $datum->getPreviewUrl(256, 256, false) ?>"/></a>
+                    <a href="<?= $datum->getViewUrl() ?>" class="preview"><img src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
                     <h3><?= $datum->name ?></h3>
                 </li>
             <?php } ?>
