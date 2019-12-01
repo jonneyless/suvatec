@@ -79,7 +79,9 @@ class Product extends Model
             $this->category_id = Category::getOneBySlug($this->category_slug)->id;
         }
 
-        $query->andFilterWhere(['category_id' => $this->category_id]);
+        if ($this->category_id) {
+            $query->andFilterWhere(['category_id' => $this->category_id]);
+        }
 
         return $dataProvider;
     }
