@@ -1,6 +1,6 @@
 <?php
 
-use admin\models\Service;
+use common\models\Service;
 use yii\db\Migration;
 
 /**
@@ -19,12 +19,14 @@ class m191201_144145_service extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
+        $this->dropTable('{{%service}}');
         $this->createTable('{{%service}}', [
             'id' => $this->bigPrimaryKey()->unsigned()->comment('服务 ID'),
             'name' => $this->string(60)->notNull()->comment('名称'),
             'slug' => $this->string()->unique()->comment('识别字串'),
             'keywords' => $this->string()->notNull()->defaultValue('')->comment('SEO 关键字'),
             'description' => $this->string()->notNull()->defaultValue('')->comment('SEO 描述'),
+            'summary', $this->text()->comment('简介'),
             'content' => $this->text()->comment('内容'),
             'status' => $this->smallInteger(1)->unsigned()->notNull()->defaultValue(0)->comment('状态'),
         ], $tableOptions . ' COMMENT="服务"');
