@@ -3,6 +3,7 @@
 namespace home\models;
 
 use Yii;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "{{%category}}".
@@ -46,5 +47,21 @@ class Category extends \common\models\Category
     public static function getOneBySlug($slug)
     {
         return self::find()->where(['slug' => $slug])->one();
+    }
+
+    public static function getNavs()
+    {
+        $items = self::find()->where(['status' => self::STATUS_ACTIVE])->all();
+
+        /* @var self[] $items */
+        foreach ($items as $item) {
+            $return[] = [
+                'url' => Url::to(['product/index', 'slug' => $item->slug]),
+                'name' => $item->name,
+                'active' => $item->slug == Yii::$app->request->getQueryParam('slug'),
+            ];
+        }
+
+        return $return;
     }
 }

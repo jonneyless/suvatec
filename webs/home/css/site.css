@@ -12,6 +12,65 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "iconfont";
+    src: url('../font/iconfont.eot?t=1530121633488'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1530121633488#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+    url('../font/iconfont.ttf?t=1530121633488') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../font/iconfont.svg?t=1530121633488#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-leftbig:before {
+    content: "\e6f9";
+}
+
+.icon-question:before {
+    content: "\e60a";
+}
+
+.icon-danxuankuang:before {
+    content: "\e6f0";
+}
+
+.icon-danxuankuangxuanzhong:before {
+    content: "\e7d5";
+}
+
+.icon-cart:before {
+    content: "\e60f";
+}
+
+.icon-next:before {
+    content: "\e656";
+}
+
+.icon-plus:before {
+    content: "\e659";
+}
+
+.icon-left:before {
+    content: "\e78d";
+}
+
+.icon-right:before {
+    content: "\e649";
+}
+
+.icon-person:before {
+    content: "\e61c";
+}
+
+.icon-minus:before {
+    content: "\e644";
+}
+
 html,
 body {
     height: 100%;
@@ -389,24 +448,100 @@ a.more:hover {
     height: 78px;
 }
 
+.sidebar {
+    width: 185px;
+    min-height: 600px;
+    float: left;
+}
+
+.sidebar h1 {
+    font-size: 32px;
+    font-family: "AvenirNextLTPro Bold", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.siderbar-nav {
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+.siderbar-nav ul > li {
+    border-bottom: 1px solid #d7dddd;
+}
+
+.siderbar-nav ul > li > a {
+    display: block;
+    height: 49px;
+    line-height: 49px;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.siderbar-nav ul > li > a > span {
+    float: right;
+}
+
+.siderbar-nav ul > li > ul {
+    display: none;
+}
+
+.siderbar-nav ul > li > ul > li {
+    border: none;
+}
+
+.siderbar-nav ul > li > ul > li:last-child {
+    margin-bottom: 20px;
+}
+
+.siderbar-nav ul > li > ul > li > a {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: normal;
+}
+
+.siderbar-nav ul > li > ul > li.active > a {
+    font-weight: bold;
+}
+
+.siderbar-nav ul > li > ul > li > a:before {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e6f0";
+    margin-right: 10px;
+}
+
+.siderbar-nav ul > li > ul > li.active > a:before {
+    content: "\e7d5";
+}
+
 .product-list {
+    width: 886px;
+    float: right;
 }
 
 .product-list ul {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
+    width: 930px;
     font-size: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .product-list li {
     display: inline-block;
     width: 266px;
+    margin-right: 44px;
+    margin-bottom: 20px;
     font-size: 14px;
     line-height: 22px;
-    margin: 0 auto;
 }
 
 .product-list li .preview {
@@ -424,8 +559,8 @@ a.more:hover {
 }
 
 .product-list li h3 {
-    font-size: 14px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 50px;
 }
 
 .product-list li .to-cart {
@@ -436,4 +571,9 @@ a.more:hover {
     padding: 0 20px;
     color: #ffffff;
     margin: 10px 0;
+}
+
+.product-view {
+    padding-top: 40px;
+    margin-bottom: 60px;
 }
