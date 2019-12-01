@@ -18,8 +18,6 @@ class m191201_144145_service extends Migration
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-
-        $this->dropTable('{{%service}}');
         $this->createTable('{{%service}}', [
             'id' => $this->bigPrimaryKey()->unsigned()->comment('服务 ID'),
             'name' => $this->string(60)->notNull()->comment('名称'),
