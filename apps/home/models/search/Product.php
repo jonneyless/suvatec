@@ -52,7 +52,7 @@ class Product extends Model
      *
      * @return \yii\data\ActiveDataProvider
      */
-    public function search($params)
+    public function search()
     {
         $query = ProductModel::find()->where(['status' => ProductModel::STATUS_ACTIVE]);
 
@@ -68,12 +68,6 @@ class Product extends Model
                 ],
             ],
         ]);
-
-        $this->load(['Product' => $params]);
-
-        if (!$this->validate()) {
-            return $dataProvider;
-        }
 
         if (!$this->category_id && $this->category_slug) {
             $this->category_id = Category::getOneBySlug($this->category_slug)->id;

@@ -28,7 +28,8 @@ class ProductController extends Controller
         }
 
         $searchModel = new ProductSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
+        $searchModel->category_slug = $slug;
+        $dataProvider = $searchModel->search();
 
         $data = $dataProvider->getModels();
         $pager = $dataProvider->getPagination();
