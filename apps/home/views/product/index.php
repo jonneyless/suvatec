@@ -20,7 +20,8 @@ use yii\widgets\LinkPager; ?>
                     <a class="nav-item" href="<?= \yii\helpers\Url::to(['product/index']) ?>">全部<span class="iconfont icon-minus"></span></a>
                     <ul class="list-unstyled">
                         <?php foreach ($navs as $nav) { ?>
-                            <li class="<?= $nav['active'] ?>"><a href="<?= $nav['url'] ?>"><?= $nav['name'] ?></a></li>
+                            <li class="<?= ($nav['active'] ? "active" : "") ?>">
+                                <a href="<?= $nav['url'] ?>"><?= $nav['name'] ?></a></li>
                         <?php } ?>
                     </ul>
                 </li>
