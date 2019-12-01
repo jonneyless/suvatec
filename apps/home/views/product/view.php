@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $model \home\models\Product */
 
-$this->title = $model->name;
+$this->title = $model ? $model->name : 'Product';
 ?>
 
 <div class="container">

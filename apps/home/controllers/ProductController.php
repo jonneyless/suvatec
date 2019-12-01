@@ -20,8 +20,13 @@ class ProductController extends Controller
     /**
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($slug = '')
     {
+        $model = null;
+        if ($slug) {
+            $model = Category::getOneBySlug($slug);
+        }
+
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
@@ -32,6 +37,7 @@ class ProductController extends Controller
             'searchModel' => $searchModel,
             'data' => $data,
             'pager' => $pager,
+            'model' => $model,
         ]);
     }
 
