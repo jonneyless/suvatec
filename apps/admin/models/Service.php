@@ -2,6 +2,7 @@
 
 namespace admin\models;
 
+use ijony\helpers\Image;
 use Yii;
 
 /**
@@ -18,4 +19,15 @@ use Yii;
  */
 class Service extends \common\models\Service
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function beforeSave($insert)
+    {
+        $datas = Image::recoverImg($this->description);
+        $this->description = $datas['content'];
+
+        return parent::beforeSave($insert);
+    }
 }

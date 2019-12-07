@@ -2,6 +2,9 @@
 
 namespace admin\models;
 
+use common\libs\Utils;
+use ijony\helpers\File;
+use ijony\helpers\Image;
 use Yii;
 
 /**
@@ -18,4 +21,15 @@ use Yii;
  */
 class Page extends \common\models\Page
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function beforeSave($insert)
+    {
+        $datas = Image::recoverImg($this->description);
+        $this->description = $datas['content'];
+
+        return parent::beforeSave($insert);
+    }
 }
