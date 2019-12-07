@@ -25,8 +25,8 @@ class Service extends \common\models\Service
      */
     public function beforeSave($insert)
     {
-        $datas = Image::recoverImg($this->description);
-        $this->description = $datas['content'];
+        $datas = Image::recoverImg($this->content);
+        $this->content = $datas['content'];
 
         return parent::beforeSave($insert);
     }
