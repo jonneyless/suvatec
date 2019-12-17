@@ -39,17 +39,14 @@ AppAsset::register($this);
     $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
     $menuItems[] = ['label' => 'Product', 'url' => ['/product/index']];
 
-    $page = Page::findOne(3);
-    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
+    $pageIds = [3, 4, 5, 2];
 
-    $page = Page::findOne(4);
-    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
-
-    $page = Page::findOne(5);
-    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
-
-    $page = Page::findOne(2);
-    $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
+    foreach ($pageIds as $pageId) {
+        $page = Page::findOne($pageId);
+        if ($page) {
+            $menuItems[] = ['label' => $page->name, 'url' => $page->getViewUrl(true), 'active' => $this->context->id == 'page' && Yii::$app->request->get('slug') == $page->slug];
+        }
+    }
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -72,6 +69,7 @@ AppAsset::register($this);
             <div class="col-lg-1"></div>
 
             <div class="col-lg-5">
+                <br/>
                 <?= $page->showSummery() ?>
             </div>
         </div>
