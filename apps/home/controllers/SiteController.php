@@ -5,6 +5,7 @@ use home\models\Product;
 use Yii;
 use yii\helpers\Html;
 use yii\web\Controller;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -45,40 +46,54 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
         $name = Yii::$app->request->post('name');
         $email = Yii::$app->request->post('email');
         $message = Yii::$app->request->post('message');
 
         if (!$name) {
-            echo 'Type you name, please!';
-            die();
+            return [
+                'error' => 1,
+                'msg' => 'Type you name, please!', // 提示输入 Name
+            ];
         }
 
         if (!$email) {
-            echo 'Type you email, please!';
-            die();
+            return [
+                'error' => 1,
+                'msg' => 'Type you email, please!', // 提示输入 Email
+            ];
         }
 
         if (!preg_match('/([^@]*)@([^@]*)\.([^@]*)/', $email)) {
-            echo 'Type you email, please!';
-            die();
+            return [
+                'error' => 1,
+                'msg' => 'Type you email, please!', // 提示 Email 错误
+            ];
         }
 
         if (!$message) {
-            echo 'Type you message, please!';
-            die();
+            return [
+                'error' => 1,
+                'msg' => 'Type you message, please!', // 提示输入 Message
+            ];
         }
 
         if (strlen($message) < 20) {
-            echo 'The message too short!';
-            die();
+            return [
+                'error' => 1,
+                'msg' => 'The message too short!', // 提示 Message 太短
+            ];
         }
 
         $cacheKey = md5($email);
         if ($data = Yii::$app->cache->get($cacheKey)) {
             if ($data == $message) {
-                echo 'Don\'t click too more!';
-                die();
+                return [
+                    'error' => 1,
+                    'msg' => 'Don\'t click too more!', // 提示不要重复提交
+                ];
             }
         }
 
@@ -92,7 +107,9 @@ class SiteController extends Controller
             ->setSubject('One Message for Bussiness')
             ->send();
 
-        echo 'Thanks!';
-        die();
+        return [
+            'error' => 0,
+            'msg' => 'Thanks!', // 提示提交成功
+        ];
     }
 }

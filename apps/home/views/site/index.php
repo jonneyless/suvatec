@@ -151,8 +151,11 @@ $js = <<<JS
       var form = $(this).closest('form');
       
       $.post('$sendUrl', form.serialize(), function(data) {
-          alert(data);
-      });
+        if (data.error == 0) {
+          form.reset();
+        }
+        alert(data.msg);
+      }, 'json');
       
       return false;
     })
