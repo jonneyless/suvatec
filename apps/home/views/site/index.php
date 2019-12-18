@@ -6,18 +6,19 @@
 $this->title = 'Suvatec';
 
 use home\models\Page;
-use home\models\Service; ?>
+use home\models\Service;
+use yii\helpers\Url; ?>
 
-<div class="slide-box">
+    <div class="slide-box">
 
-</div>
-
-<div class="about-us box">
-    <div class="box-header">
-        About Us
     </div>
 
-    <div class="box-body">
+    <div class="about-us box">
+        <div class="box-header">
+            About Us
+        </div>
+
+        <div class="box-body">
         <div class="container">
             <div class="clearfix">
                 <div class="left-item">
@@ -107,3 +108,55 @@ use home\models\Service; ?>
         </div>
     </div>
 </div>
+
+    <div class="contect box">
+        <div class="box-header">
+            Have a Great Idea?
+        </div>
+
+        <div class="box-body">
+            <div class="container">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>We help turn projects into products that scale. So if you’re looking to turn your idea into a great product or simply need help with the next stage of your product development, then contact us to discover how we can partner with you to help you to design, develop, and deliver your product idea into the market.</p>
+                    <p>&nbsp;</p>
+
+                    <form>
+                        <div class="form-group form-group-lg">
+                            <input type="text" class="form-control" name="name" placeholder="Full Name"/>
+                        </div>
+
+                        <div class="form-group form-group-lg">
+                            <input type="text" class="form-control" name="email" placeholder="Email Address"/>
+                        </div>
+
+                        <div class="form-group form-group-lg">
+                            <textarea class="form-control" name="message" placeholder="Message" rows="6"></textarea>
+                        </div>
+
+                        <div class="form-group  form-group-lg text-center">
+                            <button id="send" class="btn btn-lg btn-primary"> &nbsp; Send Message &nbsp;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+
+$sendUrl = Url::to(['site/contact']);
+$js = <<<JS
+
+    $('#send').click(function(){
+      var form = $(this).closest('form');
+      
+      $.post('$sendUrl', form.serialize(), function(data) {
+          alert(data);
+      });
+      
+      return false;
+    })
+
+JS;
+
+$this->registerJs($js);

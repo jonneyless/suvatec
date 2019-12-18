@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46aa38bd662602c168b252816bc96984",
+    "content-hash": "c650d11d9148eb469ddd139608b61ae9",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -463,12 +463,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonneyless/yii2-helper-extend.git",
-                "reference": "f17cb9fbeb4d47a3a3be717e760748c069764d1e"
+                "reference": "440d495aa1d21e0293dff6c948aa30914c59b4b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonneyless/yii2-helper-extend/zipball/f17cb9fbeb4d47a3a3be717e760748c069764d1e",
-                "reference": "f17cb9fbeb4d47a3a3be717e760748c069764d1e",
+                "url": "https://api.github.com/repos/jonneyless/yii2-helper-extend/zipball/440d495aa1d21e0293dff6c948aa30914c59b4b1",
+                "reference": "440d495aa1d21e0293dff6c948aa30914c59b4b1",
                 "shasum": ""
             },
             "require": {
@@ -483,6 +483,7 @@
                     "ijony\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -499,11 +500,7 @@
                 "jonneyless",
                 "yii2"
             ],
-            "support": {
-                "source": "https://github.com/jonneyless/yii2-helper-extend.git",
-                "issues": "https://github.com/jonneyless/yii2-helper-extend/issues"
-            },
-            "time": "2019-12-12T06:24:03+00:00"
+            "time": "2019-09-23T17:13:41+00:00"
         },
         {
             "name": "overtrue/pinyin",
