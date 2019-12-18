@@ -104,6 +104,7 @@ class SiteController extends Controller
             'message' => $message,
         ])->setFrom($email)
             ->setTo('info@suvatec.com')
+            ->setCc('Suva.xie@suvatec.com')
             ->setSubject('One Message for Bussiness')
             ->send();
 
