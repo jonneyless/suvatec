@@ -5,6 +5,7 @@
 
 $this->title = $model ? $model->name : 'Product';
 
+use common\libs\Utils;
 use home\models\Category;
 use yii\widgets\LinkPager; ?>
 
@@ -34,7 +35,7 @@ use yii\widgets\LinkPager; ?>
             <?php foreach ($data as $datum) { ?>
                 <li>
                     <a href="<?= $datum->getViewUrl() ?>" class="preview"><img src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
-                    <h3><?= $datum->name ?></h3>
+                    <h3><?= Utils::substr($datum->name, 0, 30) ?></h3>
                 </li>
             <?php } ?>
         </ul>
