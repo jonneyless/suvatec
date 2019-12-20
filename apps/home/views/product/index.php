@@ -34,8 +34,8 @@ use yii\widgets\LinkPager; ?>
         <ul>
             <?php foreach ($data as $datum) { ?>
                 <li>
-                    <a href="<?= $datum->getViewUrl() ?>" class="preview"><img src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
-                    <h3><?= Utils::substr($datum->name, 0, 30) ?></h3>
+                    <a href="<?= $datum->getViewUrl() ?>" class="preview" title="<?= $datum->name ?>"><img alt="<?= $datum->name ?>" src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
+                    <h3 title="<?= $datum->name ?>"><?= Utils::substr($datum->name, 0, 30) ?></h3>
                 </li>
             <?php } ?>
         </ul>
