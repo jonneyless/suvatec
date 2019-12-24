@@ -31,7 +31,7 @@ use yii\widgets\LinkPager; ?>
     </div>
 
     <div class="product-list">
-        <ul>
+        <ul class="list-unstyled">
             <?php foreach ($data as $datum) { ?>
                 <li>
                     <a href="<?= $datum->getViewUrl() ?>" class="preview" title="<?= $datum->name ?>"><img alt="<?= $datum->name ?>" src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
