@@ -122,15 +122,15 @@ use yii\helpers\Url; ?>
 
                     <form>
                         <div class="form-group form-group-lg">
-                            <input type="text" class="form-control" name="name" placeholder="Full Name"/>
+                            <input type="text" class="form-control" name="name" placeholder="Full Name (require)"/>
                         </div>
 
                         <div class="form-group form-group-lg">
-                            <input type="text" class="form-control" name="email" placeholder="Email Address"/>
+                            <input type="text" class="form-control" name="email" placeholder="Email Address (require)"/>
                         </div>
 
                         <div class="form-group form-group-lg">
-                            <textarea class="form-control" name="message" placeholder="Message" rows="6"></textarea>
+                            <textarea class="form-control" name="message" placeholder="Message (require)" rows="6"></textarea>
                         </div>
 
                         <div class="form-group  form-group-lg text-center">
@@ -151,8 +151,11 @@ $js = <<<JS
       var form = $(this).closest('form');
       
       $.post('$sendUrl', form.serialize(), function(data) {
-          alert(data);
-      });
+        if (data.error == 0) {
+          form.reset();
+        }
+        alert(data.msg);
+      }, 'json');
       
       return false;
     })

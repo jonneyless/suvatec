@@ -546,6 +546,8 @@ a.more:hover {
 .product-list ul {
     width: 930px;
     font-size: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 .product-list li {
