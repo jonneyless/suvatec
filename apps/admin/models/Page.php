@@ -27,8 +27,8 @@ class Page extends \common\models\Page
      */
     public function beforeSave($insert)
     {
-        $datas = Image::recoverImg($this->description);
-        $this->description = $datas['content'];
+        $datas = Image::recoverImg($this->content);
+        $this->content = $datas['content'];
 
         return parent::beforeSave($insert);
     }
