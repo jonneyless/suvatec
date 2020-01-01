@@ -4,16 +4,19 @@
 /* @var $model \home\models\Product */
 
 $this->title = $model ? $model->name : 'Product';
+
+$this->registerMetaTag(['name' => 'keywords', 'content' => $model->getKeywords()]);
+$this->registerMetaTag(['name' => 'description', 'content' => $model->getDescription()]);
 ?>
 
-<div class="container">
-    <div class="product-detail">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="preview">
-                    <a href="<?= $model->getViewUrl() ?>">
-                        <img id="preview" src="<?= $model->getPreview() ?>"/>
-                    </a>
+    <div class="container">
+        <div class="product-detail">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="preview">
+                        <a href="<?= $model->getViewUrl() ?>">
+                            <img id="preview" src="<?= $model->getPreview() ?>"/>
+                        </a>
                 </div>
 
                 <div class="preview-list">

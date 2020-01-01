@@ -7,7 +7,12 @@ $this->title = 'Suvatec';
 
 use home\models\Page;
 use home\models\Service;
-use yii\helpers\Url; ?>
+use yii\helpers\Url;
+
+$this->registerMetaTag(['name' => 'keywords', 'content' => '']);
+$this->registerMetaTag(['name' => 'description', 'content' => '']);
+
+?>
 
     <div class="slide-box">
 
