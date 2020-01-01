@@ -7,7 +7,11 @@ $this->title = $model ? $model->name : 'Product';
 
 use common\libs\Utils;
 use home\models\Category;
-use yii\widgets\LinkPager; ?>
+use yii\widgets\LinkPager;
+
+$this->registerMetaTag(['name' => 'keywords', 'content' => ""]);
+$this->registerMetaTag(['name' => 'description', 'content' => ""]);
+?>
 
 <div class="container clearfix">
     <div class="sidebar">

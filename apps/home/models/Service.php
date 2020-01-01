@@ -80,4 +80,14 @@ class Service extends \common\models\Service
 
         return $model ? strip_tags($model->content, '<p><br>') : '';
     }
+
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
 }
