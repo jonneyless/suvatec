@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $data \home\models\Product[] */
 
-$this->title = $model ? $model->name : 'Product';
+$this->title = ($model ? $model->name : 'Product') . "- HONGKONG SI-PRESS ELECTRONICS CO.,LIMITED";
 
 use common\libs\Utils;
 use home\models\Category;
