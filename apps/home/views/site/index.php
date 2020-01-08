@@ -9,8 +9,8 @@ use home\models\Page;
 use home\models\Service;
 use yii\helpers\Url;
 
-$this->registerMetaTag(['name' => 'keywords', 'content' => '']);
-$this->registerMetaTag(['name' => 'description', 'content' => '']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => 'China Sourcing Agent, China Sourcing Agent, Electronics Manufacturer, Product Sourcing']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Suvatec also can help you source and customize electronic products. Strong supply chain like Xiaomi is also our advantage. china sourcing agent.']);
 
 ?>
 
