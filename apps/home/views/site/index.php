@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $starProducts \home\models\Product[] */
 
-$this->title = 'Suvatec';
+$this->title = 'HONGKONG SI-PRESS ELECTRONICS CO.,LIMITED - China Sourcing Agent, China Sourcing Agent, Electronics Manufacturer, Product Sourcing';
 
 use home\models\Page;
 use home\models\Service;

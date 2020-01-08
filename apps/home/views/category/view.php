@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $model \home\models\Category */
 
-$this->title = $model->name;
+$this->title = $model->name . "- HONGKONG SI-PRESS ELECTRONICS CO.,LIMITED";
 ?>
 
 <div class="container">
