@@ -4,6 +4,9 @@
 /* @var $model \home\models\page */
 
 $this->title = $model->name . "- HONGKONG SI-PRESS ELECTRONICS CO.,LIMITED";
+
+$this->registerMetaTag(['name' => 'keywords', 'content' => $model->getKeywords()]);
+$this->registerMetaTag(['name' => 'description', 'content' => $model->getDescription()]);
 ?>
 
 <div class="container">

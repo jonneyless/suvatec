@@ -63,7 +63,6 @@ class Product extends Model
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'category_id' => SORT_ASC,
                     'id' => SORT_DESC,
                 ],
             ],

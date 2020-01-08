@@ -72,6 +72,16 @@ class Product extends \common\models\Product
      */
     public static function getStarProducts()
     {
-        return self::find()->where(['is_star' => self::IS_STAR_YES])->limit(3)->all();
+        return self::find()->where(['is_star' => self::IS_STAR_YES])->limit(3)->orderBy(['id' => SORT_DESC])->all();
+    }
+
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

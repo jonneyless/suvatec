@@ -7,7 +7,11 @@ $this->title = ($model ? $model->name : 'Product') . "- HONGKONG SI-PRESS ELECTR
 
 use common\libs\Utils;
 use home\models\Category;
-use yii\widgets\LinkPager; ?>
+use yii\widgets\LinkPager;
+
+$this->registerMetaTag(['name' => 'keywords', 'content' => ""]);
+$this->registerMetaTag(['name' => 'description', 'content' => ""]);
+?>
 
 <div class="container clearfix">
     <div class="sidebar">
@@ -31,7 +35,7 @@ use yii\widgets\LinkPager; ?>
     </div>
 
     <div class="product-list">
-        <ul>
+        <ul class="list-unstyled">
             <?php foreach ($data as $datum) { ?>
                 <li>
                     <a href="<?= $datum->getViewUrl() ?>" class="preview" title="<?= $datum->name ?>"><img alt="<?= $datum->name ?>" src="<?= $datum->getPreview(256, 256, false) ?>"/></a>
