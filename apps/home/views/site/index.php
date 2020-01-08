@@ -116,13 +116,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Suvatec also can 
 
     <div class="contect box">
         <div class="box-header">
-            Have a Great Idea?
+            WANNA BUILD A PRODUCT?
         </div>
 
         <div class="box-body">
             <div class="container">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <p>We help turn projects into products that scale. So if you’re looking to turn your idea into a great product or simply need help with the next stage of your product development, then contact us to discover how we can partner with you to help you to design, develop, and deliver your product idea into the market.</p>
+                    <p>
+                        Consumer electronics always growing, iterating. We always like the uniqe, crative, fun product. It's our pleasure to find them and bring to you.<br/>
+                        We are your trustworth partner here in China, do share your thoughts with us!
+                    </p>
                     <p>&nbsp;</p>
 
                     <form>
