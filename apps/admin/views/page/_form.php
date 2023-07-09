@@ -13,7 +13,7 @@ use ijony\admin\widgets\ActiveField;
     <div class="ibox-content">
 
         <?php $form = ActiveForm::begin([
-            'fieldClass' => ActiveField::className(),
+            'fieldClass' => ActiveField::class,
             'layout' => 'horizontal',
         ]); ?>
 
