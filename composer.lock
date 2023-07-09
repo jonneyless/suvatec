@@ -514,12 +514,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonneyless/yii2-admin-asset.git",
-                "reference": "8ce3303d221f187df58e94090d89dbb282583d5d"
+                "reference": "88fc8b54bcaef2cfbdd6b88183c2013b5aed14b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonneyless/yii2-admin-asset/zipball/8ce3303d221f187df58e94090d89dbb282583d5d",
-                "reference": "8ce3303d221f187df58e94090d89dbb282583d5d",
+                "url": "https://api.github.com/repos/jonneyless/yii2-admin-asset/zipball/88fc8b54bcaef2cfbdd6b88183c2013b5aed14b3",
+                "reference": "88fc8b54bcaef2cfbdd6b88183c2013b5aed14b3",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +561,7 @@
                 "source": "https://github.com/jonneyless/yii2-admin-asset.git",
                 "issues": "https://github.com/jonneyless/yii2-admin-asset/issues"
             },
-            "time": "2023-07-09T04:02:31+00:00"
+            "time": "2023-07-09T04:04:34+00:00"
         },
         {
             "name": "jonneyless/yii2-helper-extend",
