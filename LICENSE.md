@@ -1,7 +1,4 @@
-The Yii2 Blog Project is free software. It is released under the terms of
-the following BSD License.
-
-Copyright © 2017 by Jony (http://www.ijony.com)
+Copyright © 2008 by Yii Software LLC (http://www.yiisoft.com)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
