@@ -2,11 +2,10 @@
 
 use ijony\admin\widgets\ActiveForm;
 use yii\helpers\Html;
-use ijony\admin\widgets\ActiveField;
 
 /* @var $this yii\web\View */
 /* @var $model admin\models\Page */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form ijony\admin\widgets\ActiveForm */
 ?>
 
 <div class="ibox">
