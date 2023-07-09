@@ -1,7 +1,7 @@
 <?php
 
+use ijony\admin\widgets\ActiveForm;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
 use ijony\admin\widgets\ActiveField;
 
 /* @var $this yii\web\View */
@@ -13,7 +13,6 @@ use ijony\admin\widgets\ActiveField;
     <div class="ibox-content">
 
         <?php $form = ActiveForm::begin([
-            'fieldClass' => ActiveField::class,
             'layout' => 'horizontal',
         ]); ?>
 
