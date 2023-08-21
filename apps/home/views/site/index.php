@@ -43,7 +43,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Suvatec also can 
         </div>
     </div>
 
-    <div class="service box">
+    <div class="service box" style="display: none">
         <h1 class="box-header">
             Sourcing and Supply Chain Management Service
         </h1>
@@ -63,7 +63,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Suvatec also can 
         </div>
     </div>
 
-    <div class="oem box">
+    <div class="oem box" style="display: none">
         <div class="container">
             <h1 class="box-header">
                 OEM / Sourcing Service
