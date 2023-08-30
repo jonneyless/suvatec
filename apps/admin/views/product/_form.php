@@ -2,10 +2,10 @@
 
 use admin\assets\PageAsset;
 use yii\helpers\Url;
-use yii\jui\JuiAsset;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use ijony\admin\widgets\ActiveField;
+use yii\jui\SortableAsset;
 
 /* @var $this yii\web\View */
 /* @var $model admin\models\Product */
@@ -18,7 +18,7 @@ PageAsset::register($this)->init([
     ],
 ]);
 
-JuiAsset::register($this);
+SortableAsset::register($this);
 ?>
 
 <?php $form = ActiveForm::begin([
