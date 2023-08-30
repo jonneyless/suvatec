@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use ijony\admin\widgets\ActiveForm;
 use ijony\admin\widgets\ActiveField;
 
 /* @var $this yii\web\View */
