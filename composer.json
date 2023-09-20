@@ -40,7 +40,7 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
+            "url": "https://asset-packagist.org"
         },
         "jonneyless/yii2-helper-extend": {
             "type": "vcs",
